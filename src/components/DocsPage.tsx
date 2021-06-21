@@ -8,6 +8,7 @@ import {
   ArgsTable, 
   Stories 
 } from '@storybook/addon-docs/blocks';
+import { CssCustomPropertiesTable } from './CssCustomPropertiesTable';
 
 
 export const DocsPage: FC = () => (
@@ -17,6 +18,7 @@ export const DocsPage: FC = () => (
     <Description />
     <Primary />
     <ArgsTable story={PRIMARY_STORY} />
+    <CssCustomPropertiesTable />
     <Stories />
   </>
 );
