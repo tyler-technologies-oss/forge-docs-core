@@ -1,15 +1,14 @@
-import typescript from "rollup-plugin-typescript2";
-import pkg from "./package.json";
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import typescript from '@rollup/plugin-typescript';
+import pluginJson from '@rollup/plugin-json';
+import postcss from 'rollup-plugin-postcss';
+import pkg from './package.json';
+import visualizer from 'rollup-plugin-visualizer';
+import { terser } from 'rollup-plugin-terser';
+import { getFiles } from './buildutils';
 
-const extensions = [".js", ".jsx", ".ts", ".tsx"];
-const input = "src/index.ts";
-
-const plugins = [
-  typescript({
-    typescript: require("typescript"),
-  }),
-];
-
+const extensions = ['.js', '.jsx', '.ts', '.tsx'];
 
 // just above plugins declaration add
 const external = [
@@ -19,23 +18,46 @@ const external = [
 // then for each output declaration add external key and value
 export default [
   {
-    input,
+    input: [
+      './src/index.ts',
+      ...getFiles('./src/common', extensions),
+      ...getFiles('./src/components', extensions),
+      ...getFiles('./src/core', extensions),
+      ...getFiles('./src/utils', extensions),
+    ],
     output: {
-      file: pkg.module,
-      format: "esm",
+      dir: 'dist',
+      format: 'esm',
+      preserveModules: true,
+      preserveModulesRoot: 'src',
       sourcemap: true,
     },
-    plugins,
+    plugins: [
+      resolve(),
+      commonjs(),
+      pluginJson(),
+      typescript({
+        tsconfig: './tsconfig.build.json',
+        declaration: true,
+        declarationDir: 'dist',
+      }),
+      postcss({
+        use: [
+          [
+            'sass',
+            {
+              includePaths: ['./node_modules'],
+            },
+          ],
+        ],
+      }),
+      terser(),
+      visualizer({
+        filename: 'bundle-analysis.html',
+        open: true,
+      }),
+    ],
     external,
-  },
-  {
-    input,
-    output: {
-      file: pkg.main,
-      format: "cjs",
-      sourcemap: true,
-    },
-    plugins,
-    external,
+    // external: ['react', 'react-dom'],
   },
 ];
