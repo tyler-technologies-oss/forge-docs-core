@@ -1,0 +1,15 @@
+@import '~@tylertech/tyler-components-web/styles/theme/mixins';
+
+.live-demo {
+  @include tyl-css-custom-property(background-color, --tyl-storybook-theme-example-background, #f5f5f5);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100px;
+  max-width: 825px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+

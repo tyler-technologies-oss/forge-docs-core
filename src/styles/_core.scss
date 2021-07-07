@@ -1,0 +1,33 @@
+@import '~@tylertech/tyler-components-web/styles/theme/mixins';
+@import '~@tylertech/tyler-components-web/styles/theme/mdc-theme-dark';
+@import '~@tylertech/tyler-components-web/styles/skeleton/variables';
+
+// html,
+// body {
+//   height: 100%;
+//   width: 100%;
+// }
+
+// body {
+//   margin: 0;
+//   overflow: hidden;
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+//   background-color: var(--mdc-theme-background);
+//   font-size: 16px;
+// }
+
+li {
+  line-height: 2rem;
+}
+
+body.tyl-storybook-dark {
+  @include tyl-theme-dark-properties;
+  @include tyl-theme-dark-mdc-overrides();
+
+  // Storybook CSS custom properties
+  --tyl-storybook-theme-example-background: #444444;
+  --tyl-storybook-code-background: #1E1E1E;
+  --tyl-storybook-theme-header-container: rgba(0, 0, 0, 0.85);
+  --tyl-storybook-theme-resources-background: #{$material-color-grey-800};
+}

@@ -1,0 +1,21 @@
+@import './core';
+@import './links';
+@import './content';
+@import './table';
+@import './code';
+@import './typography';
+@import './busy-indicator';
+@import './button';
+@import './expansion-panel';
+@import './services';
+@import './progress-spinner';
+@import './datepicker';
+
+
+body {
+  background-color: var(--mdc-theme-background);
+}
+
+.gif-max-width img {
+  max-width: 100%
+}

@@ -1,10 +1,10 @@
-// @import '~@tylertech/tyler-components-web/styles/typography/mixins';
-// @import '~@tylertech/tyler-components-web/styles/theme/mixins';
+@import '~@tylertech/tyler-components-web/styles/typography/mixins';
+@import '~@tylertech/tyler-components-web/styles/theme/mixins';
 
 .container {
-  // @include mdc-theme-prop(border-color, border-color);
-  // @include tyl-css-custom-property(background-color, --mdc-theme-surface, #fff);
-  // @include tyl-css-custom-property(color, --mdc-theme-on-surface, rgba(0,0,0,0.87));
+  @include mdc-theme-prop(border-color, border-color);
+  @include tyl-css-custom-property(background-color, --mdc-theme-surface, #fff);
+  @include tyl-css-custom-property(color, --mdc-theme-on-surface, rgba(0,0,0,0.87));
 
   display: flex;
   border-width: 1px;
@@ -54,21 +54,5 @@
     justify-content: center;
     align-items: center;
     padding: 24px;
-  }
-}
-
-.code-examples {
-  // @include mdc-theme-prop(border-left-color, border-color);
-
-  display: flex;
-  overflow: hidden;
-  box-sizing: border-box;
-  flex-direction: column;
-  border-left-width: 1px;
-  border-left-style: solid;
-
-  pre[class*="language-"] {
-    margin: 0;
-    border: none;
   }
 }

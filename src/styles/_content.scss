@@ -1,0 +1,112 @@
+@import "~@tylertech/tyler-components-web/styles/theme/mixins";
+@import "./variables";
+
+@mixin docs-def-base() {
+  padding: 16px;
+
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
+
+  & > p {
+    margin-bottom: 0;
+  }
+}
+
+.tyl-storybook {
+  &__blockquote {
+    padding: 8px 16px;
+    background-color: rgba(25, 118, 210, 0.05);
+    border-style: solid;
+    border-width: 0px 0px 0px 4px;
+    border-color: #ffc107;
+    border-color: var(--mdc-theme-secondary);
+    margin: 24px 0;
+    border-radius: 4px;
+  }
+
+  &__section {
+    margin: 8px $tyl-storybook-content-horizontal-margin;
+    overflow: auto;
+
+    h1 {
+      margin-top: 0;
+    }
+  }
+
+  /// These are the styles used for displaying method docs on the development API docs pages
+  &__property-def {
+    @include docs-def-base;
+
+    &-name {
+      display: flex;
+      margin-bottom: 8px;
+
+      span:first-child {
+        @include mdc-theme-prop(color, text-secondary-on-background);
+
+        margin-right: 8px;
+      }
+
+      span:last-child {
+        font-family: monospace;
+      }
+    }
+
+    &-header {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+
+      & > tcw-label-value:not(:last-child) {
+        margin-right: 24px;
+      }
+    }
+  }
+
+  /// These are the styles used for displaying method docs on the development API docs pages
+  &__method-def {
+    @include docs-def-base;
+
+    padding: 16px;
+  }
+
+  /// These are the styles used for displaying content on the tone page
+
+  &__tone-def-header {
+    display: grid;
+    grid-gap: 16px;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// HACK(DerekMoss): As of Storybookjs 6.3.1
+div[id^='story--'] {  
+  margin: 8px 24px; 
+}
+// This is a bit fragile but allows us a global selector for
+// styling all story elements inside of MDX. ie: Margin and Padding
+// This is because currently there is a bug that make it hard to wrap
+// <Story/> with other react components such as our own <PageSection/>
+//
+// We should use the decorators property inside of .storybook/preview.js
+// 
+// -- start of example --
+// //.storybook/preview.js
+//
+// import React from 'react';
+//
+// export const decorators = [
+//   (Story) => (
+//     <div class="tyl-storybook__section">
+//       <Story />
+//     </div>
+//   ),
+// ];
+//
+// -- end of example --
+//
+// but it requires some configuration of webpack or something.
+// so after the research spike we should consider fixing this.
+// as decorators are storybookjs's prefered way to wrap stories in styles
+
+

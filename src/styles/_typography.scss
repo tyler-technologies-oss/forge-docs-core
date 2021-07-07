@@ -1,0 +1,47 @@
+@import '~@tylertech/tyler-components-web/styles/theme/mixins';
+
+.tyl-storybook {
+  &--header1 {
+    margin: 24px 0 8px 0;
+
+    & ~ p.tyl-storybook--body1 {
+      margin-top: 0;
+
+      &:last-child {
+        margin-bottom: 24px;
+      }
+    }
+  }
+
+  &--header2 {
+    margin: 24px 0 8px 0;
+  }
+
+  &--divider {
+    margin: 16px;
+  }
+
+  &__inline-code {
+    @include tyl-css-custom-property(background-color, --tyl-storybook-code-background, #f6f8fa);
+    @include tyl-css-custom-property(border-color, --mdc-theme-border-color, #e0e0e0);
+
+    white-space: pre;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    border-width: 1px;
+    border-style: solid;
+  }
+}
+
+.code-styling {
+  background-color: #eff5fe;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-family: 'Roboto Mono',monospace;
+  font-size: .75rem;
+}
+
+.width-max-content {
+  width: max-content;
+}

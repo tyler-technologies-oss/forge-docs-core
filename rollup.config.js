@@ -5,7 +5,7 @@ import pluginJson from '@rollup/plugin-json';
 import postcss from 'rollup-plugin-postcss';
 import pkg from './package.json';
 import visualizer from 'rollup-plugin-visualizer';
-import { terser } from 'rollup-plugin-terser';
+// import { terser } from 'rollup-plugin-terser';
 import { getFiles } from './buildutils';
 
 const extensions = ['.js', '.jsx', '.ts', '.tsx'];
@@ -24,6 +24,7 @@ export default [
       ...getFiles('./src/components', extensions),
       ...getFiles('./src/core', extensions),
       ...getFiles('./src/utils', extensions),
+      ...getFiles('./src/styles', ['.scss']),
     ],
     output: {
       dir: 'dist',
@@ -50,8 +51,9 @@ export default [
             },
           ],
         ],
+        extract: true,
       }),
-      terser(),
+      // terser(),
       visualizer({
         filename: 'bundle-analysis.html',
         open: true,

@@ -1,0 +1,16 @@
+.expansion-card {
+    text-align: center;
+
+    .inner-card {
+        padding: 16px 16px 0px 16px;
+        
+        tcw-avatar {
+            --tyl-avatar-size: 100px;
+        }
+    }
+
+    .tyl-expandable__content {
+        text-align: left; 
+        padding: 0px;
+    }
+}

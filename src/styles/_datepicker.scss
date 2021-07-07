@@ -1,0 +1,14 @@
+.datepicker-demo {
+  background: white; 
+  padding: 4px; 
+  border-radius: 4px;
+
+  >table tbody tr td {
+    padding-right: intial;
+    padding-left: initial;
+    border-bottom: none!important;
+    color: #000;
+    color: var(--mdc-theme-on-surface, #000);
+    font-size: 14px;
+  }
+}

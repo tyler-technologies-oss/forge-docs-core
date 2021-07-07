@@ -2,10 +2,12 @@ import React, { useState, useContext, useEffect, FC } from 'react';
 import Highlight, { defaultProps, Language, PrismTheme } from 'prism-react-renderer';
 import { copyToClipboard } from '@tyler-components-web/core';
 import styled from 'styled-components';
-import Prism from "prism-react-renderer";
+
+ /* @ts-ignore */
+import Prism from "prism-react-renderer/prism";
 
 import { ThemeContext } from '../../core/ThemeContext';
-import CopyIconButton  from '../copy-icon-button/CopyIconButton';
+import { CopyIconButton }  from '../copy-icon-button/CopyIconButton';
 import prismThemeLight from '../../common/PrismThemeLight';
 import prismThemeDark from '../../common/PrismThemeDark';
 import { showToast } from '../../utils/toast';
@@ -32,7 +34,7 @@ interface CodeArgs {
   expanded?: boolean;
 }
 
-const Code: FC<CodeArgs> = ({ children, className: classNameProp = '', expanded }) => {
+export const Code: FC<CodeArgs> = ({ children, className: classNameProp = '', expanded }) => {
   let isExpandable = false;
   const [hasMoreThanNineLines, setHasMoreThanNineLines] = useState(false);
   const [shouldShowMore, setShouldShowMore] = useState(expanded);
@@ -98,7 +100,7 @@ const Code: FC<CodeArgs> = ({ children, className: classNameProp = '', expanded 
                 </div>
               ))}
               {hasMoreThanNineLines && (
-                <tcw-button class="tyl-forge__snippet-btn">
+                <tcw-button class="tyl-storybook__snippet-btn">
                   <button type="button" onClick={() => setShouldShowMore(!shouldShowMore)}>
                     {shouldShowMore ? <span>Show less</span> : <span>Show more</span>}
                     <i className="tyler-icons">
@@ -114,5 +116,3 @@ const Code: FC<CodeArgs> = ({ children, className: classNameProp = '', expanded 
     </StyledContainer>
   );
 };
-
-export default Code;

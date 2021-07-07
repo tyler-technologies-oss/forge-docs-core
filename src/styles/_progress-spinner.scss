@@ -1,0 +1,28 @@
+.hide {
+  display: none;
+}
+
+.progress-spinner-demo_container {
+  background: white; 
+  padding: 8px; 
+  border-radius: 4px;
+
+  .button_spinner {
+    margin-top: 8px; 
+    margin-right: 8px
+  }
+}
+
+.card-progress-spinner_container {
+  display: flex;
+  justify-content: center; 
+
+  &--padding {
+    padding: 24px 0px;
+  }
+}
+
+.max-width-gif .do-dont-image-module--container--3N_St:nth-child(2) > img {
+  max-width: 80%;
+}
+
