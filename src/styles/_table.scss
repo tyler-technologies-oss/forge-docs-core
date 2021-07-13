@@ -32,7 +32,7 @@
 
 @import '@tylertech/tyler-components-web/styles/table/mixins';
 
-table {
+table.tyl-storybook__table {
   @include tyl-table;
 
   tbody tr {

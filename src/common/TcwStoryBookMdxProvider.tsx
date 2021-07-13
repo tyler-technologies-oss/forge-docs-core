@@ -24,6 +24,7 @@ export const TcwStorybookMdxComponents = {
   h2: (props: any) => <h2 {...props} className="tyl-typography--headline5 tyl-storybook--header1">{props.children}</h2>,
   h3: (props: any) => <h3 {...props} className="tyl-typography--subtitle1-secondary tyl-storybook--header2">{props.children}</h3>,
   p: (props: any) => <p {...props} className="tyl-typography--body1 tyl-storybook--body1" />,
+  table: (props: any) => <table {...props} className="tyl-storybook__table" />,
   section: (props: any) => <section {...props} className="tyl-storybook__section">{props.children}</section>,
   blockquote: (props: any) => <Blockquote {...props} />,
   hr: (props: any) => <ContentDivider {...props} />,
