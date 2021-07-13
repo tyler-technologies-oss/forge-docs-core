@@ -16,7 +16,7 @@ import {
 import { ThemeWrapper } from './StorybookTheme';
 
 
-export const TcwStorybookMdxComponents = {
+export const TcwStorybookMdxComponents: Record<string, FC> = {
   wrapper: ({ children, ...props }: any) => {
     return <div>{children}</div>;
   },
@@ -34,7 +34,7 @@ export const TcwStorybookMdxComponents = {
   CodeSwitcher: (props: any) => <ThemeWrapper><CodeSwitcher {...props}/></ThemeWrapper>,
   ContentDivider,
   ImageBlock,
-  LiveDemo,
+  LiveDemo: (props: any) => <ThemeWrapper><LiveDemo {...props}/></ThemeWrapper>,
   LinkButton,
   MethodDef,
   PropertyDef,
