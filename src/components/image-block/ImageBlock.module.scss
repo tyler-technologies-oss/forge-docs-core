@@ -1,0 +1,46 @@
+@import '~@tylertech/tyler-components-web/styles/theme/mixins';
+@import '~@tylertech/tyler-components-web/styles/typography/mixins';
+
+.container {
+  width: 100%;
+  margin: 24px 0;
+}
+
+.image-wrapper {
+  margin: 0 auto;
+}
+
+.caption-container {
+  box-sizing: border-box;
+  width: 825px;
+  margin: 0 auto;
+}
+
+.image-container {
+  @include tyl-css-custom-property(background-color, --tyl-storybook-theme-example-background, #f5f5f5);
+
+  box-sizing: border-box;
+  width: 825px;
+  margin: 0 auto;
+
+  & > span {
+    width: 100%;
+  }
+
+  &--padded {
+    padding: 8px 8px;
+  }
+
+  &--stretch {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.caption {
+  @include tyl-typography(body2);
+  @include mdc-theme-prop(color, text-secondary-on-background);
+}

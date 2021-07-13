@@ -10,6 +10,7 @@ declare global {
       // TODO (DerekMoss): replace any with proper types for TCW to JSX.IntrinsicElements
       "tcw-button": any,
       "tcw-card": any,
+      "tcw-divider": any,
       "tcw-icon-button": any,
       "tcw-label-value": any,
       "tcw-tab": any,

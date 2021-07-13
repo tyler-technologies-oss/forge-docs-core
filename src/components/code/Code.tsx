@@ -30,7 +30,7 @@ require("prismjs/components/prism-csharp");
 require("prismjs/components/prism-aspnet");
 
 interface CodeArgs {
-  className: string;
+  className?: string;
   expanded?: boolean;
 }
 
