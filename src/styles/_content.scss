@@ -78,35 +78,3 @@
     grid-template-columns: 1fr 1fr;
   }
 }
-
-// HACK(DerekMoss): As of Storybookjs 6.3.1
-div[id^='story--'] {  
-  margin: 8px 24px; 
-}
-// This is a bit fragile but allows us a global selector for
-// styling all story elements inside of MDX. ie: Margin and Padding
-// This is because currently there is a bug that make it hard to wrap
-// <Story/> with other react components such as our own <PageSection/>
-//
-// We should use the decorators property inside of .storybook/preview.js
-// 
-// -- start of example --
-// //.storybook/preview.js
-//
-// import React from 'react';
-//
-// export const decorators = [
-//   (Story) => (
-//     <div class="tyl-storybook__section">
-//       <Story />
-//     </div>
-//   ),
-// ];
-//
-// -- end of example --
-//
-// but it requires some configuration of webpack or something.
-// so after the research spike we should consider fixing this.
-// as decorators are storybookjs's prefered way to wrap stories in styles
-
-
