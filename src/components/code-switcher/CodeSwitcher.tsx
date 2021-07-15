@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, FC } from 'react';
 import { Code } from '../code/Code';
 
-import styles from './CodeSwitcher.module.scss';
+// import styles from './CodeSwitcher.module.scss';
 import { ITabBarComponent, IViewSwitcherComponent } from '@tylertech/tyler-components-web';
 
-interface CodeSwitcherArgs {
+export interface CodeSwitcherArgs {
   codeHtml: string;
   codeTs: string;
   codeBlazor: string;
@@ -73,7 +73,7 @@ export const CodeSwitcher: FC<CodeSwitcherArgs> = ({
 
   const CodeExamples: FC = () => {
     const hasCode = codeHtml !== '' || codeTs !== '' || codeScss !== '';
-    return hasCode ? (<div className={styles.codeExamples}>
+    return hasCode ? (<div className={'code-examples'}>
       <TabBar/>
       <ViewSwitcher/>      
     </div>) : null;

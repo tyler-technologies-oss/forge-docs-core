@@ -29,7 +29,7 @@ const StyledContainer = styled.div`
 require("prismjs/components/prism-csharp");
 require("prismjs/components/prism-aspnet");
 
-interface CodeArgs {
+export interface CodeArgs {
   className?: string;
   expanded?: boolean;
 }

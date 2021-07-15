@@ -1,14 +1,14 @@
 import React, { FC } from 'react';
 import dashify from 'dashify';
 
-interface IEmptiableLabelValue {
+export interface IEmptiableLabelValue {
   label: string;
   name: string;
   empty: boolean;
   dashifyValue?: boolean;
 }
 
-const EmptiableLabelValue: FC<IEmptiableLabelValue> = ({ label, name, empty, dashifyValue = false }) => {
+export const EmptiableLabelValue: FC<IEmptiableLabelValue> = ({ label, name, empty, dashifyValue = false }) => {
   return (
     <tcw-label-value {...empty && {empty: true}}>
       <span slot="label">{label}</span>
@@ -18,13 +18,13 @@ const EmptiableLabelValue: FC<IEmptiableLabelValue> = ({ label, name, empty, das
   );
 };
 
-interface IPropertyDefName {
+export interface IPropertyDefName {
   name: string;
   prop?: boolean;
   attr?: boolean;
 }
 
-const PropertyDefName: FC<IPropertyDefName> = ({ name, prop, attr }) => {
+export const PropertyDefName: FC<IPropertyDefName> = ({ name, prop, attr }) => {
   return (
     <div className="tyl-storybook__property-def-name">
       <span className="tyl-typography--headline5">{(prop ? 'Property:' : 'Attribute:')}</span>
@@ -33,7 +33,7 @@ const PropertyDefName: FC<IPropertyDefName> = ({ name, prop, attr }) => {
   );
 };
 
-interface IPropertyDef extends IPropertyDefName {
+export interface IPropertyDef extends IPropertyDefName {
   type: string;
   defaultValue: string;
 }

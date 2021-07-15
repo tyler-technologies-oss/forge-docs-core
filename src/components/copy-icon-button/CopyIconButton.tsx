@@ -1,6 +1,6 @@
 import React, { FC, MouseEventHandler } from 'react';
 
-interface CopyIconButtonArgs {
+export interface CopyIconButtonArgs {
   onCopy: MouseEventHandler<HTMLButtonElement>;
 }
 

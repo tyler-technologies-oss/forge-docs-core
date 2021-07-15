@@ -1,3 +1,5 @@
+@import '~@tylertech/tyler-components-web/styles/theme/mixins';
+
 pre[class*='language-'] {
   padding: 16px;
   border-radius:  4px;
@@ -29,5 +31,21 @@ pre[class*='language-'] {
       border-top-right-radius: 0px;
       border-bottom-left-radius: 0px;
     }
+  }
+}
+
+.code-examples {
+  @include mdc-theme-prop(border-left-color, border-color);
+
+  display: flex;
+  overflow: hidden;
+  box-sizing: border-box;
+  flex-direction: column;
+  border-left-width: 1px;
+  border-left-style: solid;
+
+  pre[class*="language-"] {
+    margin: 0;
+    border: none;
   }
 }

@@ -1,7 +1,7 @@
 import React, { FC, ButtonHTMLAttributes } from 'react';
 import { BUTTON_CONSTANTS } from '@tylertech/tyler-components-web';
 
-type ButtonType = 
+export type ButtonType = 
   'raised' 
 | 'elevated' 
 | 'outlined' 
@@ -10,7 +10,7 @@ type ButtonType =
 | 'elevated-dense' 
 | 'outlined-dense';
 
-interface LinkButtonArgs extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface LinkButtonArgs extends ButtonHTMLAttributes<HTMLButtonElement> {
   href: string;
   iconClass?: string;
   icon?: string;

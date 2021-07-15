@@ -2,9 +2,9 @@ import React, { FC } from 'react';
 import classnames from 'classnames';
 import { CodeSwitcher } from '../code-switcher/CodeSwitcher';
 
-import styles from './LiveDemo.module.scss';
+// import styles from './LiveDemo.module.scss';
 
-interface LiveDemoArgs {
+export interface LiveDemoArgs {
   padded: boolean;
   layout: string;
   dense: boolean;
@@ -27,18 +27,18 @@ export const LiveDemo: FC<LiveDemoArgs> = ({
   fullWidth = false
 }) => {
   const containerClasses = classnames(
-    styles.container,
+    'container',
     {
-      [styles.containerDense]: dense,
-      [styles.containerLayoutRow]: layout === 'row',
-      [styles.containerLayoutColumn]: layout === 'column',
+      'container--dense': dense,
+      'container--layout-row': layout === 'row',
+      'container--layout-column': layout === 'column',
     }
   );
 
   const demoContainerClasses = classnames(
-    styles.inner,
+    'inner',
     {
-      [styles.innerPadded]: padded    
+      'inner--padded': padded    
     }
   );
 

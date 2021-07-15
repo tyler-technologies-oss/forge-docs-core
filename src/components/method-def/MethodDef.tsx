@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-interface MethodDefArgs {
+export interface MethodDefArgs {
   name: string;
 }
 
