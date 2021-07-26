@@ -25,7 +25,7 @@ body.tyl-forge-react-dark {
   @include tyl-theme-dark-properties;
   @include tyl-theme-dark-mdc-overrides();
 
-  // Storybook CSS custom properties
+  // Forge React CSS custom properties
   --tyl-forge-react-theme-example-background: #444444;
   --tyl-forge-react-code-background: #1E1E1E;
   --tyl-forge-react-theme-header-container: rgba(0, 0, 0, 0.85);
