@@ -1,15 +1,15 @@
 import React, { FC } from 'react';
 
 export interface MethodDefArgs {
-  name: string;
+  name?: string;
 }
 
-export const MethodDef: FC<MethodDefArgs> = ({ name, children }) => {
+export const MethodDef: FC<MethodDefArgs> = ({ name = '', children }) => {
   return (
     <tcw-card outlined has-padding="false">
-      <div className="tyl-storybook__method-def">
+      <div className="tyl-forge-react__method-def">
         <div>
-          <code className="tyl-storybook__inline-code">{name}</code>        
+          <code className="tyl-forge-react__inline-code">{name}</code>        
         </div>
         {children}
       </div>

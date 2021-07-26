@@ -1,6 +1,6 @@
-# Tyler Components Web Storybook
+# Forge React
 
-Here you will find components used for building custom storybook pages in our TCW project
+Here you will find core react components used for building forge documentation across projects.
 
 ## Development
 

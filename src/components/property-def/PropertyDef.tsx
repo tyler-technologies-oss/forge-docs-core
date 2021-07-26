@@ -2,13 +2,13 @@ import React, { FC } from 'react';
 import dashify from 'dashify';
 
 export interface IEmptiableLabelValue {
-  label: string;
-  name: string;
-  empty: boolean;
+  label?: string;
+  name?: string;
+  empty?: boolean;
   dashifyValue?: boolean;
 }
 
-export const EmptiableLabelValue: FC<IEmptiableLabelValue> = ({ label, name, empty, dashifyValue = false }) => {
+export const EmptiableLabelValue: FC<IEmptiableLabelValue> = ({ label = '', name = '', empty = true, dashifyValue = false }) => {
   return (
     <tcw-label-value {...empty && {empty: true}}>
       <span slot="label">{label}</span>
@@ -19,14 +19,14 @@ export const EmptiableLabelValue: FC<IEmptiableLabelValue> = ({ label, name, emp
 };
 
 export interface IPropertyDefName {
-  name: string;
+  name?: string;
   prop?: boolean;
   attr?: boolean;
 }
 
-export const PropertyDefName: FC<IPropertyDefName> = ({ name, prop, attr }) => {
+export const PropertyDefName: FC<IPropertyDefName> = ({ name = '', prop, attr }) => {
   return (
-    <div className="tyl-storybook__property-def-name">
+    <div className="tyl-forge-react__property-def-name">
       <span className="tyl-typography--headline5">{(prop ? 'Property:' : 'Attribute:')}</span>
       <span className="tyl-typography--headline5">{(!prop && attr ? dashify(name) : name)}</span>
     </div>
@@ -34,25 +34,25 @@ export const PropertyDefName: FC<IPropertyDefName> = ({ name, prop, attr }) => {
 };
 
 export interface IPropertyDef extends IPropertyDefName {
-  type: string;
-  defaultValue: string;
+  type?: string;
+  defaultValue?: string;
 }
 
 export const PropertyDef: FC<IPropertyDef> = ({ name, prop = true, attr = true, type, defaultValue, children }) => {
   return (
     <tcw-card outlined has-padding="false">
-      <div className="tyl-storybook__property-def">
+      <div className="tyl-forge-react__property-def">
         <PropertyDefName name={name} prop={prop} attr={attr} />
-        <div className="tyl-storybook__property-def-header">
+        <div className="tyl-forge-react__property-def-header">
           {!prop && attr && <EmptiableLabelValue label="Property" name={name} empty={!!prop === false} />}
           {prop && <EmptiableLabelValue label="Attribute" name={name} empty={!!attr === false} dashifyValue />}
           {type && <tcw-label-value>
             <span slot="label">Type</span>
-            <code slot="value" className="tyl-storybook__inline-code">{type}</code>
+            <code slot="value" className="tyl-forge-react__inline-code">{type}</code>
           </tcw-label-value>}
           {defaultValue && <tcw-label-value>
             <span slot="label">Default</span>
-            <code slot="value" className="tyl-storybook__inline-code">{defaultValue}</code>
+            <code slot="value" className="tyl-forge-react__inline-code">{defaultValue}</code>
           </tcw-label-value>}
         </div>
         {children}

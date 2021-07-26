@@ -1,6 +1,6 @@
 {
-  "name": "@tylertech/tcw-storybook",
-  "version": "0.1.47",
+  "name": "@tylertech/forge-react",
+  "version": "0.2.0",
   "files": [
     "dist/"
   ],

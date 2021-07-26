@@ -100,7 +100,7 @@ export const Code: FC<CodeArgs> = ({ children, className: classNameProp = '', ex
                 </div>
               ))}
               {hasMoreThanNineLines && (
-                <tcw-button class="tyl-storybook__snippet-btn">
+                <tcw-button class="tyl-forge-react__snippet-btn">
                   <button type="button" onClick={() => setShouldShowMore(!shouldShowMore)}>
                     {shouldShowMore ? <span>Show less</span> : <span>Show more</span>}
                     <i className="tyler-icons">

@@ -1,10 +1,10 @@
 @import '~@tylertech/tyler-components-web/styles/theme/mixins';
 
-.tyl-storybook {
+.tyl-forge-react {
   &--header1 {
     margin: 24px 0 8px 0;
 
-    & ~ p.tyl-storybook--body1 {
+    & ~ p.tyl-forge-react--body1 {
       margin-top: 0;
 
       &:last-child {
@@ -22,7 +22,7 @@
   }
 
   &__inline-code {
-    @include tyl-css-custom-property(background-color, --tyl-storybook-code-background, #f6f8fa);
+    @include tyl-css-custom-property(background-color, --tyl-forge-react-code-background, #f6f8fa);
     @include tyl-css-custom-property(border-color, --mdc-theme-border-color, #e0e0e0);
 
     white-space: pre;

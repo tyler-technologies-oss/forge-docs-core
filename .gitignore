@@ -7,7 +7,7 @@
 
 # testing
 /coverage
-tylertech-tcw-storybook-*.tgz
+tylertech-forge-react-*.tgz
 
 # production
 /build

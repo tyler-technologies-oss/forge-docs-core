@@ -17,7 +17,7 @@
 }
 
 .image-container {
-  @include tyl-css-custom-property(background-color, --tyl-storybook-theme-example-background, #f5f5f5);
+  @include tyl-css-custom-property(background-color, --tyl-forge-react-theme-example-background, #f5f5f5);
 
   box-sizing: border-box;
   width: 825px;

@@ -21,13 +21,13 @@ li {
   line-height: 2rem;
 }
 
-body.tyl-storybook-dark {
+body.tyl-forge-react-dark {
   @include tyl-theme-dark-properties;
   @include tyl-theme-dark-mdc-overrides();
 
   // Storybook CSS custom properties
-  --tyl-storybook-theme-example-background: #444444;
-  --tyl-storybook-code-background: #1E1E1E;
-  --tyl-storybook-theme-header-container: rgba(0, 0, 0, 0.85);
-  --tyl-storybook-theme-resources-background: #{$material-color-grey-800};
+  --tyl-forge-react-theme-example-background: #444444;
+  --tyl-forge-react-code-background: #1E1E1E;
+  --tyl-forge-react-theme-header-container: rgba(0, 0, 0, 0.85);
+  --tyl-forge-react-theme-resources-background: #{$material-color-grey-800};
 }

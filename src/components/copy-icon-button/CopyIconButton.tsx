@@ -6,7 +6,7 @@ export interface CopyIconButtonArgs {
 
 export const CopyIconButton: FC<CopyIconButtonArgs> = ({ onCopy }) => {
   return (
-    <tcw-icon-button class="tyl-storybook__copy-button">
+    <tcw-icon-button class="tyl-forge-react__copy-button">
       <button type="button" className="tyler-icons" onClick={onCopy}>content_copy</button>
       <tcw-tooltip position="bottom">Copy code snippet</tcw-tooltip>
     </tcw-icon-button>

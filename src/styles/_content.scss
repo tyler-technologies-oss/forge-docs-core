@@ -13,7 +13,7 @@
   }
 }
 
-.tyl-storybook {
+.tyl-forge-react {
   &__blockquote {
     padding: 8px 16px;
     background-color: rgba(25, 118, 210, 0.05);
@@ -26,7 +26,7 @@
   }
 
   &__section {
-    margin: 8px $tyl-storybook-content-horizontal-margin;
+    margin: 8px $tyl-forge-react-content-horizontal-margin;
     overflow: none;
 
     h1 {
