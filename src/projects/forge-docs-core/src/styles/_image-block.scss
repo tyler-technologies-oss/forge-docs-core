@@ -1,0 +1,46 @@
+@use '@tylertech/forge/styles/theme/theme' as forge-theme;
+@use '@tylertech/forge/styles/typography/mixins' as forge-typography;
+
+.container {
+  width: 100%;
+  margin: 24px 0;
+}
+
+.image-wrapper {
+  margin: 0 auto;
+}
+
+.caption-container {
+  box-sizing: border-box;
+  width: 825px;
+  margin: 0 auto;
+}
+
+.image-container {
+  @include forge-theme.css-custom-property(background-color, --forge-docs-core-theme-example-background, #f5f5f5);
+
+  box-sizing: border-box;
+  width: 825px;
+  margin: 0 auto;
+
+  & > span {
+    width: 100%;
+  }
+
+  &--padded {
+    padding: 8px;
+  }
+
+  &--stretch {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.caption {
+  @include forge-typography.typography(body2);
+  @include forge-theme.property(color, text-secondary-on-background);
+}

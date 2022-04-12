@@ -1,0 +1,21 @@
+@use '@tylertech/forge/styles/table/mixins' as forge-table;
+
+table.forge-docs-core__table {
+  @include forge-table.forge-table;
+
+  tbody tr {
+    height: 48px;
+
+    &:hover {
+      background-color: inherit;
+    }
+
+    td {
+      padding-right: 0;
+    }
+  }
+
+  td:not(:last-child) {
+    white-space: nowrap;
+  }
+}

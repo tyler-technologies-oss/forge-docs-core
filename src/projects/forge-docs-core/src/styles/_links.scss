@@ -1,0 +1,21 @@
+@use '@tylertech/forge/styles/theme/theme' as forge-theme;
+@use '@tylertech/forge/styles/theme/theme-values' as forge-theme-values;
+
+a {
+  @include forge-theme.css-custom-property(color, --mdc-theme-primary, forge-theme-values.$primary);
+
+  text-decoration: none;
+  font-weight: 400;
+  opacity: 1;
+  transition: opacity 100ms linear;
+
+  &[disabled] {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.38;
+  }
+
+  &:hover:not([disabled]) {
+    opacity: 0.75;
+  }
+}

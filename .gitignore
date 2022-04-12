@@ -7,7 +7,7 @@
 
 # testing
 /coverage
-tylertech-forge-react-*.tgz
+*.tgz
 
 # production
 /build
@@ -23,3 +23,5 @@ tylertech-forge-react-*.tgz
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+.vscode/

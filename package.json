@@ -1,17 +1,58 @@
 {
-  "name": "@tylertech/forge-react",
-  "version": "0.2.2",
-  "files": [
-    "dist/"
-  ],
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "name": "@tylertech/forge-docs-core",
+  "version": "1.0.0-dev.0",
+  "repository": "tyler-technologies/forge-docs-core",
+  "license": "Apache-2.0",
   "scripts": {
     "start": "react-scripts start",
-    "build": "rollup -c",
-    "prebuild": "rimraf dist/",
+    "build:demo": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build": "gulp build",
+    "changelog": "auto changelog",
+    "release": "auto shipit"
+  },
+  "dependencies": {
+    "@tylertech/forge-react": "^1.0.0-dev.0",
+    "classnames": "^2.3.1",
+    "dashify": "^2.0.0",
+    "prism-react-renderer": "^1.3.1",
+    "prismjs": "^1.27.0",
+    "styled-components": "^5.3.5",
+    "tslib": "^2.3.1"
+  },
+  "devDependencies": {
+    "@reduxjs/toolkit": "^1.8.1",
+    "@rollup/plugin-commonjs": "^21.0.3",
+    "@rollup/plugin-node-resolve": "^13.1.3",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "@tylertech-eslint/eslint-plugin": "^1.0.8",
+    "@tylertech/forge": "1.0.0-dev.2",
+    "@tylertech/forge-build-tools": "^1.0.0-dev.0",
+    "@tylertech/stylelint-rules": "^2.0.0",
+    "@types/dashify": "^1.0.1",
+    "@types/gulp": "^4.0.9",
+    "@types/jest": "^26.0.24",
+    "@types/node": "^12.20.21",
+    "@types/react": "^17.0.19",
+    "@types/react-dom": "^17.0.9",
+    "@types/react-router-dom": "^5.3.3",
+    "@types/styled-components": "^5.1.25",
+    "gulp": "^4.0.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-error-overlay": "^6.0.9",
+    "react-router-dom": "^5.2.1",
+    "react-scripts": "4.0.3",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "sass": "~1.38.1",
+    "standard-changelog": "^2.0.27",
+    "ts-node": "^9.1.1",
+    "typescript": "~4.6.3",
+    "web-vitals": "^1.1.2",
+    "webpack": "4.44.2"
   },
   "eslintConfig": {
     "extends": [
@@ -19,62 +60,16 @@
       "react-app/jest"
     ]
   },
-  "dependencies": {
-    "@mdx-js/react": "^1.6.22",
-    "classnames": "^2.3.1",
-    "dashify": "^2.0.0",
-    "polished": "^4.1.3",
-    "prism-react-renderer": "^1.2.1",
-    "prismjs": "^1.23.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "styled-components": "^5.3.0"
-  },
-  "devDependencies": {
-    "@material/theme": "~4.0.0",
-    "@material/typography": "~4.0.0",
-    "@rollup/plugin-commonjs": "^19.0.0",
-    "@rollup/plugin-json": "^4.1.0",
-    "@rollup/plugin-node-resolve": "^13.0.0",
-    "@rollup/plugin-typescript": "^8.2.1",
-    "@storybook/addons": "^6.3.1",
-    "@storybook/api": "^6.3.1",
-    "@tyler-components-web/core": "^1.3.0",
-    "@tylertech/tyler-components-web": "^1.10.0",
-    "@tylertech/tyler-icons": "^1.5.0",
-    "@types/dashify": "^1.0.0",
-    "@types/lodash": "^4.14.167",
-    "@types/mdx-js__react": "^1.5.4",
-    "@types/node": "^12.20.15",
-    "@types/react": "^17.0.11",
-    "@types/react-dom": "^17.0.8",
-    "@types/styled-components": "^5.1.10",
-    "node-sass": "^6.0.1",
-    "postcss": "^8.3.5",
-    "rimraf": "^3.0.2",
-    "rollup": "^2.52.2",
-    "rollup-plugin-postcss": "^4.0.0",
-    "rollup-plugin-scss": "^2.6.1",
-    "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-visualizer": "^5.5.0",
-    "sass": "^1.35.1",
-    "storybook-dark-mode": "^1.0.7",
-    "trim": ">=0.0.3",
-    "tslib": "^2.3.0",
-    "typescript": "^4.3.4"
-  },
-  "peerDependencies": {
-    "@material/theme": "~4.0.0",
-    "@material/typography": "~4.0.0",
-    "@storybook/addons": "^6.3.1",
-    "@storybook/api": "^6.3.1",
-    "@tyler-components-web/core": "^1.3.0",
-    "@tylertech/tyler-components-web": "^1.10.0",
-    "@tylertech/tyler-icons": "^1.5.0",
-    "node-sass": "^6.0.1",
-    "postcss": "^8.3.5",
-    "storybook-dark-mode": "^1.0.7",
-    "trim": ">=0.0.3",
-    "tslib": "^2.3.0"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
