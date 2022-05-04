@@ -54,7 +54,6 @@ if (isForge()) {
         <p>This is an awesome description.</p>
       </PropertyDef>
 
-      <ForgeDivider />
       <h3 className="forge-typography--subtitle2" style={{marginTop: '24px'}}>MethodDev</h3>
       <MethodDef name="isForge(): boolean;">
         <p>This is an awesome description.</p>

@@ -63,8 +63,10 @@ task('copy-package-files', () => {
   return copyFilesMultiple(files);
 });
 
+task('lint', series('lint:typescript', 'lint:sass'));
+
 /** The main build task that generates the npm package. */
-task('build', series('clean', 'lint:typescript', 'lint:sass', parallel('bundle', 'compile:sass', 'copy-package-files')));
+task('build', series('clean', 'lint', parallel('bundle', 'compile:sass', 'copy-package-files')));
 
 export interface IBundleConfig {
   input: string;
